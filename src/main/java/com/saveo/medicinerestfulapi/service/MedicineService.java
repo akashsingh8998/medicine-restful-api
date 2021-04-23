@@ -34,11 +34,11 @@ public class MedicineService implements IMedicineService{
 
     @Override
     public ResponseEntity<Object> getMedicineDetails(String id) {
-        Medicine medicine = medicineDao.findByC_unique_code(id);
-        if(Objects.nonNull(medicine)){
-            return ResponseEntity.ok().body(medicine);
-        }else{
+        List<Medicine> medicine = medicineDao.findByC_unique_code(id);
+        if(medicine.isEmpty()){
             return ResponseEntity.status(404).body("Medicine not found!");
+        }else{
+            return ResponseEntity.ok().body(medicine);
         }
     }
 }

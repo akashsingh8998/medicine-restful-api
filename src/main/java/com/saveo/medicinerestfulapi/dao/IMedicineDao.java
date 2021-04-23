@@ -14,5 +14,5 @@ public interface IMedicineDao  extends JpaRepository<Medicine,Long> {
     List<String> findByC_name(String name);
 
     @Query(value = "select m from Medicine m where m.uniqueCode = ?1")
-    Medicine findByC_unique_code(String c_unique_code);
+    List<Medicine> findByC_unique_code(String c_unique_code);
 }
