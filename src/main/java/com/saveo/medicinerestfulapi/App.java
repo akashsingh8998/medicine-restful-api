@@ -13,10 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.saveo.medicinerestfulapi.dao")
 @EnableSwagger2
-public class MedicineRestfulapiApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MedicineRestfulapiApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 	@Bean
